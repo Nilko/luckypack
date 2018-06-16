@@ -1,0 +1,685 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'VT323', sans-serif; 
+  line-height: 1.4;
+  font-size: 16px;
+  color: #fff !important;
+  background: #fafeff;
+}
+
+p, h1, h2, h3, h4, h5, span {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+} 
+
+h1, h2, h3, h4, h5 {
+  color: #fff !important;
+}
+
+input, button {
+  font-family: 'VT323', sans-serif; 
+}
+
+input:focus, button:focus, a:focus {
+  outline: unset;
+}
+
+button {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+  transition: .4s;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+.logo { 
+  width: 220px;      
+  position: relative;
+  display: inline-block;
+}
+
+.logo img {
+  width: 100%;
+  position: relative;
+}
+
+header {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;  
+}
+
+.content {
+  position: relative;
+  width: 1200px;
+  margin: 30px auto 0 auto;
+}
+
+.column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+
+.column:nth-child(3) {
+  margin-right: 0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#workspace .tasks .task p, #workspace .column .projects p {
+  font-size: 14px;
+  color: #7f8c8d;   
+}
+
+#workspace .tasks .task h4 {
+  font-weight: 700;  
+}
+
+.tabs {
+  position: relative;
+  border-bottom: 1px solid #bdc3c7;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.tabs .workspace, .tabs .projects, .tabs .clients, .tabs .tasks {
+  background: transparent;
+  border: none;
+  margin-right: 15px;    
+}
+
+.tabs button img {
+  width: 25px;
+  display: block;
+  margin: 0 auto;  
+}
+
+.tabs .workspace, .tabs .projects, .tabs .clients, .tabs .tasks {
+  opacity: .4;
+}
+
+.tabs .active_tab {
+  opacity: 1;
+}
+
+.search {  
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+
+.search input {
+    border: 2px solid #e2e2e2;
+    color: #34495e;            
+    padding: 8px 12px;    
+    border-radius: 6px 0 0 6px;
+    box-shadow: none;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+
+.search input:hover {
+  border: 2px solid #3498db;
+}
+
+.search button {
+  color: white;
+  background-color: #3498db;
+  padding: 7px 19px 8.5px 19px;
+  border: none;  
+  border-radius: 0 6px 6px 0;
+  margin-left: -5px;  
+  transition: .4s
+}
+
+.search button:hover {
+  background: #2980b9;
+}
+
+.block {  
+  box-shadow: 0 0 4px 1px #e2e2e2;  
+  padding: 25px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+#workspace .column .tasks h2, #workspace .column .projects h2 {
+  margin-bottom: 20px;
+}
+
+#workspace .column .tasks h4, #workspace .column .projects h4 {
+  margin-bottom: 5px;
+}
+
+#workspace .column .tasks .task, #workspace .column .projects .project {
+  margin-bottom: 15px;
+}
+
+
+.nav {
+  margin-top: 20px;
+  position: relative; 
+}
+
+.nav .add {
+  font-size: 40px;
+  line-height: 0;
+  position: absolute;
+  right: 0;
+  top: 7px;  
+}
+
+.tasks_stats span {
+  font-size: 14px;
+  color: #7f8c8d; 
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+}
+
+.tasks_stats .value, .value {
+  font-size: 50px;
+  display: block;
+  color: #2C3E50;
+  width: 100%;
+  transition: .4s;
+}
+
+.tasks_stats h2 {
+  margin-bottom: 25px;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+.total_clients, .total_projects {
+  width: 49%;
+  display: inline-block;
+}
+
+.total_clients {
+  margin-right: 1%;
+}
+
+.total_clients h2, .total_projects h2, .total_price h2 {
+  margin-bottom: 10px;
+}
+
+.task:hover p, .task:hover h4, .project:hover p, .project:hover h4 {
+  color: #e74c3c !important;
+}
+
+h4 {
+  transition: .4s;
+  cursor: pointer;
+}
+
+.value:hover {
+  color: #e74c3c;
+}
+
+.nav_info {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+
+.nav_info .faq {
+  margin-right: 20px;
+}
+
+#projects .project, #clients .client, #tasks .task, #client_popup {
+  box-shadow: 0 0 4px 1px #e2e2e2;  
+  padding: 25px;
+  border-radius: 2px;
+  background: #fff;
+  width: 270px;
+  display: inline-block;
+  margin-right: 36px;
+  position: relative;
+  margin-bottom: 30px;
+  vertical-align: top;
+}
+
+#projects .project:nth-child(4n+4), #clients .client:nth-child(4n+4), #tasks .task:nth-child(4n+4) {
+  margin-right: 0;
+}
+
+#projects h2, #clients h2, #tasks h2, #client_popup h2 {
+  margin-bottom: 15px;  
+}
+
+#projects .clients {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#projects .cost {
+  font-size: 20px;  
+  margin-left: 30px;
+}
+
+#clients .client span, #tasks .task span, #client_popup span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+b {
+  color: #2c3e50;
+}
+
+.status {
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  right: 25px;  
+  cursor: pointer;
+}
+
+.disable_status {
+  opacity: .2;
+}
+
+#client_popup {
+  display: block;
+  margin: 0 auto;  
+}
+
+#faq, #about {
+  background: #fff;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  position: relative;
+}
+
+#faq h1, #about h1 {
+  text-align: center;
+}
+
+#search {
+  position: absolute;
+  z-index: 10;
+  top: 80px;
+  background: #fafeff;
+  width: 110%;
+  height: 110%;
+  left: -5%;
+  padding: 20px 6%;
+}
+
+#intro {
+  height: 100vh;
+  width: 100vw; 
+  padding-top: 30px;  
+}
+
+.bg {
+  background: linear-gradient(115deg, #006DFF, #fdd4e1) no-repeat;  
+  padding-bottom: 30px;
+  color: #fff !important;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;  
+  height: 100%;  
+}
+
+.wrap h1 {
+  font-size: 70px;  
+  font-weight: 400;  
+  line-height: 1.3;
+}
+
+.wrap h1 span {
+  color: red;
+}
+
+.offer {
+  position: absolute;
+  top: 40%;  
+  transform: translateY(-50%);  
+}
+
+.offer h1 {
+  font-size: 80px;
+  line-height: 1.1;
+}
+
+.offer button {
+  background: #ff4a4a;
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 24px;
+  margin-top: 30px;
+  width: 256px;
+}
+
+.wrap .nav_info a {
+  color: #ff4a4a;  
+  font-size: 18px;  
+}
+
+.wrap .nav_info {
+  top: 15px;
+  bottom: unset;
+}
+
+.wrap #faq, .wrap #about {  
+  background: linear-gradient(75deg, #4f61d1, #d2a6a8) no-repeat;  
+}
+
+.scroll {
+  position: absolute; 
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll img {
+  width: 35px !important;  
+  transform: rotate(-45deg);
+}
+
+.scroll:after {
+  content: 'scroll down';
+  font-size: 14px;
+  opacity: .6; 
+  position: absolute;
+  width: 100px; 
+  bottom: -20px;  
+  left: -15px;
+}
+
+#advantages, #faq_section, .game_section {
+  width: 1200px;
+  /*height: 100vh;*/
+  margin: 0 auto;  
+  padding: 60px 120px 0 120px;
+  position: relative;
+}
+
+.items {
+  text-align: center;  
+}
+
+.item {    
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  width: 190px;
+}
+.item:nth-child(4n+4) { 
+  margin-right: 0;
+}
+
+#advantages img {
+  margin: 0 auto 10px auto; 
+  position: relative;
+  width: 64px;
+  display: block;
+}
+
+#advantages p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+#advantages .scroll {
+  bottom: 30px;
+}
+
+.question {  
+  width: 800px;
+  margin: 0 auto 25px auto;
+}
+
+.question h2 {
+  margin-bottom: 10px;
+}
+
+.question p {
+  line-height: 1.3;
+  font-size: 18px;
+}
+
+#faq_section button, .game_section button {  
+  background: #ff4a4a;
+  border-radius: 100px;
+  border: none;
+  display: block;
+  color: #fff;
+  width: 256px;
+  padding: 10px 25px;
+  font-size: 24px;
+  margin: 50px auto 0 auto;  
+}
+
+.mail_mail {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.noExtension, .errNetwork {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#workspace .project {
+  position: relative;
+}
+#workspace .price {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+}
+
+#add_project, #add_client, #add_task {
+  background: #fafeff;
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+  padding: 40px;
+  text-align: center;
+}
+
+.mfp-fade input, .mfp-fade .event  {
+  display: block;
+  width: 160px;
+  margin: 10px auto;
+}
+
+.mfp-fade textarea {
+  margin: 10px auto;
+  width: 160px;
+  display: block;
+}
+
+.mfp-fade select {
+  margin: 10px auto;
+  width: 120px;  
+}
+
+/*.mfp-fade .select_proj, .mfp-fade .select_clients  */
+
+
+.mfp-fade label {
+  margin-right: 10px;
+}
+
+.mfp-fade .event {
+  color: white;
+  background-color: #3498db;
+  padding: 7px 19px 8.5px 19px;
+  border: none;  
+  border-radius: 6px;  
+  transition: .4s;
+}
+
+.mfp-fade .event:hover {
+  background: #2980b9;
+}
+
+.mfp-fade input, .mfp-fade select, .mfp-fade textarea {
+   border: 2px solid #e2e2e2;
+   color: #34495e;            
+   padding: 8px 12px;    
+   border-radius: 6px;
+   box-shadow: none;
+   transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+
+.mfp-fade h1 {
+  margin-bottom: 30px;
+}
+
+.mfp-fade input:hover {
+  border: 2px solid #3498db;
+}
+
+.add_global {
+  margin-left: 115px;
+  width: 270px;
+  vertical-align: middle;
+  text-align: center;  
+  display: inline-flex;  
+  font-size: 60px;
+}
+
+.delete {
+  width: 20px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  cursor: pointer;
+}
+
+#transaction {
+  background: #fff;
+  width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px;
+  position: relative;
+}
+
+#transaction img, p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#transaction img {
+  width: 80px;
+}
+
+#transaction p {
+  font-size: 18px;
+  margin-right: 30px;
+}
+
+#transaction button {
+  opacity: 0;
+  width: 0.001px;
+}
+
+.hash {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  margin-left: 0px;
+}
+
+.hash p {
+  position: relative;
+  width: 300px;
+  position: absolute;
+  left: 185px;
+  top: 2px;
+}
+
+
+.deadline, .cost {
+  position: relative;
+  overflow: unset;
+}
+
+.deadline:before {
+  content: 'Project deadline: ';
+  position: absolute;
+  top: 10px;
+  left: -110px;
+}
+
+.deadline:after {
+  content: 'Project cost: ';
+  position: absolute;
+  top: 60px;
+  left: -110px;
+}
+
+.mockup, .desc_moc {
+  display: inline-block;
+  width: 100%;
+}
+
+.desc_moc {
+  margin-top: 20px;
+}
+
+.mockup img {
+  box-shadow: 3px 3px 10px #a0a0a0;
+  width: 100%;
+}
+
+.desc_moc p {
+  font-size: 22px;
+}
+
+.bg .game_section h1 {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.game_section {
+  width: 1200px;  
+  margin: 0 auto;  
+  padding: 60px 120px 0 120px;
+  position: relative;
+}
+
+.not_first_fix {
+  margin-top: 120px !important;
+}
